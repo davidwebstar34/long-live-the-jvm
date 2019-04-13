@@ -36,12 +36,12 @@
 (add 3 2)
 
 
-(doseq [n (range 10)
-               :let [i (-> n
-                           inc
-                           range
-                           rand-nth)]]                    
-         (go
-           (<! (timeout (* i 1000)))
-           (println n)))
+; (doseq [n (range 10)
+;                :let [i (-> n
+;                            inc
+;                            range
+;                            rand-nth)]]                    
+;          (go
+;            (<! (timeout (* i 1000)))
+;            (println n)))
 

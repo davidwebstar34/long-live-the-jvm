@@ -4,6 +4,8 @@ Java and Clojure project
 ### Based on
 https://aws.amazon.com/blogs/compute/clojure/
 
+lein repl :start
+
 lein uberjar
 
 aws lambda create-function \
