@@ -15,14 +15,14 @@ public class KafkaTest {
         Serde<String> stringSerde = Serdes.String();
 
         Properties properties = new Properties();
-        properties.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:29092");
+        properties.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
         properties.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, "my-consumer-1");
         properties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
         properties.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
 
         StreamsBuilder streamsBuilder = new StreamsBuilder();
 
-        KStream source = streamsBuilder.stream("my-topic", Consumed.with(stringSerde, stringSerde));
+        KStream source = streamsBuilder.stream("my-topic2", Consumed.with(stringSerde, stringSerde));
 
         source.foreach((k, v) -> System.out.println("Key: " + k + " ,Value: " + v));
 
